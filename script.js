@@ -8,7 +8,7 @@ const current0El = document.querySelector('#current--0')
 const current1El = document.querySelector('#current--1')
 
 // const btnHold = document.getElementsByClassName('btn--hold')[0]
-
+let currentScore, scores, activePlayer
 // TODO:
 // llamar a función init que haga lo siguiente:
 
@@ -17,6 +17,9 @@ const current1El = document.querySelector('#current--1')
 // currentScore1 y currentScore2 a 0
 
 const init = function () {
+  currentScore = 0
+  activePlayer = 0
+  scores = [0, 0]
   // diceEl.clasList.add('hidden')
   diceEl.style.display = 'none'
   score0El.textContent = 0
@@ -41,6 +44,8 @@ btnRoll.addEventListener('click', () => {
     // pierdes turno
   } else {
     // sumar el dado al current score
+    currentScore += dice
+    current0El.textContent = currentScore
   }
 })
 
