@@ -25,6 +25,10 @@ const init = function () {
   score1El.textContent = 0
   current0El.textContent = 0
   current1El.textContent = 0
+  player0El.classList.remove('Player--Winner')
+  player1El.classList.remove('Player--Winner')
+  player0El.classList.add('Player--Active')
+  player1El.classList.remove('Player--Winner')
 }
 
 init()
@@ -51,9 +55,7 @@ btnRoll.addEventListener('click', () => {
   }
 })
 
-btnNew.addEventListener('click', () => {
-  console.log('New game')
-})
+btnNew.addEventListener('click', init)
 
 btnHold.addEventListener('click', () => {
   // añadir currentScore al totalScore del jugador activo
